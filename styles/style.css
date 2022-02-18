@@ -1,0 +1,128 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
+}
+
+.header_visually-hidden {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.time__select,
+.player__container,
+.sound__picker {
+    flex: 1; 
+    height: 80vh;
+    min-width: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.player__container {
+    position: relative;
+    min-width: 50vh;
+}
+
+.player__container svg {
+    position: absolute;
+    height: 40vh;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    pointer-events: none;
+}
+
+.player__container svg circle {
+    transition: all 0.3s ease-in-out;
+}
+
+.time__display {
+    position: absolute;
+    color: white;
+    font-size: 3em;
+}
+
+.video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    height: auto;
+    z-index: -100;
+}
+
+.time__select button, 
+.sound__picker button {
+    width: 30vh;
+    height: 10vh;
+    color: white;
+    background: none;
+    border: 2px solid white;
+    border-radius: 14px;
+    font-size: 2em;
+    cursor: pointer;
+    outline: none;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.time__select button:hover {
+    background: gray;
+    color: black;
+    opacity: 1;
+}
+
+.sound__picker button {
+    border: 2px solid white;
+    width: 15vh;
+    height: 15vh;
+    border-radius: 50%;
+    padding: 3vh;
+    outline: none;
+}
+
+.sound__picker button img {
+    height: 100%;
+}
+
+.sound__picker button:nth-child(odd) {
+    background: midnightblue;
+}
+
+.sound__picker button:nth-child(even) {
+    background: goldenrod;
+}
+
+.sound__picker button:hover {
+    background: gray;
+    opacity: 1;
+}
+
+.play {
+    cursor: pointer;
+}
+
+.replay {
+    height: 7vh;
+    cursor: pointer;
+    transition: all 0.7s ease-out;
+}
+
+.replay:hover {
+    transform: rotateZ(-360deg);
+}
